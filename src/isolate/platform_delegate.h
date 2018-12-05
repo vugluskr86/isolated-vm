@@ -295,9 +295,9 @@ class PlatformDelegate : public v8::Platform {
 				});
 			}
 		}
-
+/*
 #if NODE_MODULE_OR_V8_AT_LEAST(67, 6, 8, 242)
-		void CallDelayedOnWorkerThread(std::unique_ptr<v8::Task> task, double delay_in_seconds) final {
+		virtual void CallDelayedOnWorkerThread(std::unique_ptr<v8::Task> task, double delay_in_seconds) final {
 			node_platform->CallDelayedOnWorkerThread(std::move(task), delay_in_seconds);
 		}
 #elif NODE_MODULE_OR_V8_AT_LEAST(67, 6, 8, 117)
@@ -305,7 +305,7 @@ class PlatformDelegate : public v8::Platform {
 			node_platform->CallDelayedOnWorkerThread(std::move(task), delay_in_seconds);
 		}
 #endif
-
+*/
 		void CallIdleOnForegroundThread(v8::Isolate* isolate, v8::IdleTask* task) final {
 			if (isolate == node_isolate) {
 				node_platform->CallIdleOnForegroundThread(isolate, task);
