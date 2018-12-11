@@ -215,7 +215,9 @@ declare module "isolated-vm" {
 		 *
 		 * @return [transferable]
 		 */
-		runSync(context: Context, options?: ScriptRunOptions): any;
+    runSync(context: Context, options?: ScriptRunOptions): any;
+    
+    release(): void;
 	}
 
 	export interface ScriptRunOptions {
